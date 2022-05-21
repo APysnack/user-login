@@ -8,10 +8,9 @@ class RegistrationsController < ApplicationController
     # to define the user_params function and return the specific parameters for this object
     def create
         @user = User.new(user_params)
-
         respond_to do |format|
             if @user.save
-                # redirects to home if successful, need to be able to pass user
+                session[:user_id] = @user.id
                 format.html { redirect_to root_path user: { username: @user.username } }
             else
                 # re-render registrations/new.html.erb if signup failed
