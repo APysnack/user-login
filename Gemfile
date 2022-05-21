@@ -43,6 +43,8 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
+gem 'graphql'
+gem 'rack-cors'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -64,6 +66,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'graphiql-rails'
+  gem 'faker'
 end
 
 group :test do

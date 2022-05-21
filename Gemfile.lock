@@ -94,8 +94,14 @@ GEM
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.10.0)
+    faker (2.21.0)
+      i18n (>= 1.8.11, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    graphiql-rails (1.8.0)
+      railties
+      sprockets-rails
+    graphql (2.0.7)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.0.3)
@@ -140,6 +146,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (7.0.3)
@@ -222,9 +230,13 @@ DEPENDENCIES
   capybara
   debug
   dotenv-rails (~> 2.7, >= 2.7.6)
+  faker
+  graphiql-rails
+  graphql
   importmap-rails
   jbuilder
   puma (~> 5.0)
+  rack-cors
   rails (~> 7.0.3)
   redis (~> 4.0)
   selenium-webdriver
