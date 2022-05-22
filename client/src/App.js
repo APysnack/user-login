@@ -1,11 +1,14 @@
 import React from 'react';
 import Users from './components/Users';
+import Login from './components/Login';
+import { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme } from './theme';
 
 function App() {
   return (
-    <div className="App">
-      <Users />
-    </div>
+    <ThemeProvider theme={lightTheme}>
+      <Login />
+    </ThemeProvider>
   );
 }
 
