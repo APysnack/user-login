@@ -2,12 +2,71 @@ import React from 'react';
 import styled from 'styled-components';
 import {Formik, Form, Field } from 'formik';
 import api from '../utils/api';
+import axios from 'axios';
+
+
+// todo: extract into separate API component
+const API_URL = "http://localhost:3000"
+const actions = {
+    registerUser(payload){
+        return new Promise((resolve, reject) =>{
+            axios.post(API_URL + '/users', payload).then((response) => {
+                console.log(response);
+                resolve(response);
+            }).catch((error) =>{
+                console.log(error);
+                reject(error);
+            })
+        })
+    },
+
+    loginUser(payload){
+        return new Promise((resolve, reject) => {
+            axios.post(`${API_URL}users/sign_in`, payload).then((response) => {
+                console.log(response.data.headers.authorization);
+                resolve(response)
+            }).catch((error) =>{
+                reject(error);
+            })
+        })
+    },
+
+    logoutUser({ commit }){
+        const config = {
+            headers: {
+                authorization: 3,
+            },
+        };
+
+        new Promise((resolve, reject) => {
+            axios.delete(`${API_URL}users/sign_out`, config).then(() => {
+            console.log("CHANGE AUTHORIZATION IN CONFIG TO THE AUTH TOKEN IN REDUX STATE ABOVE. Then @ this line of code use redux to reset set state of user info to null here");
+            resolve(); }).catch((error) => {
+                reject(error);
+            });
+        });
+    },
+
+    loginUserWithToken({ commit }, payload) {
+        const config = {
+            headers: {
+                authorization: payload.auth_token,
+            },
+        };
+
+        new Promise((resolve, reject) => {
+            axios.get(`${API_URL}member-data`, config).then((response) => {
+                console.log("should receive user info from server and set in in state using redux here");
+                resolve(response)
+            }).catch((error) =>{
+                reject(error);
+            })
+        })
+    },
+}
 
 function Login() {
     const [user, setUser] = React.useState(null);
-
-    // todo: design API call to check if there is a CurrentUser logged in. 
-    // setUser on page load if so
 
     return (
         <>
@@ -26,16 +85,9 @@ function Login() {
                     onSubmit = {(values, {setSubmitting}) => {
                         setTimeout(() => {
                             setSubmitting(false);
-                            const user = { email: "ENTEREMAILHERE", password: "ENTERPASSWORDHERE" };
-                            api.login(user).then(response => {
-                                if(response.user){
-                                    setUser(response.user);
-                                }
-                                else {
-                                    console.log(response);
-                                }
 
-                            })
+                            const payload = { user: { email: "mynewuser@gmail.com", password: "password", password_confirmation: "password" }};
+                            actions.registerUser(payload);
                         }, 500);
                     }}
                 >

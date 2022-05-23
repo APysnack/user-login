@@ -7,6 +7,7 @@ const jsonHeaders = {
     'Content-Type': 'application/json',
 };
 
+const API_URL = 'http://localhost:3000'
 class API {
     jsonRequest = ({ uri, method, body, headers, credentials }) => {
         credentials = credentials || 'same-origin';
@@ -72,9 +73,15 @@ class API {
         return this.jsonRequest({ uri: url, method: 'DELETE' });
     };
 
-    login = (user) => {
-        return this.post('http://localhost:3000/sign_in/', { user: user });
+    // not 100% sure if this is the correct endpoint, but appears to be
+    register = (user) => {
+      return this.post(API_URL + '/users', { user: user });
     };
+
+    login = (user) => {
+        return this.post(API_URL + '/users/sign_in', { user: user });
+    };
+
 }
 
 export default new API();
