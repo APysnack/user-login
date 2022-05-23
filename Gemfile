@@ -31,6 +31,9 @@ gem "jbuilder"
 gem "redis", "~> 4.0"
 gem 'pry', '~> 0.14.1'
 gem 'pry-nav', '~> 1.0'
+gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'devise-jwt', '~> 0.9.0'
+
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
