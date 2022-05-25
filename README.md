@@ -1,24 +1,14 @@
-# README
+Setup (still a work in progress):
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+git clone https://github.com/APysnack/live-rap-center.git
+cd live-rap-center
+bundle install
 
-Things you may want to cover:
+create a .env file in the root directory
 
-* Ruby version
+rake secret
 
-* System dependencies
+copy the generated secret. In your .env file add
 
-* Configuration
+DEVISE_JWT_SECRET_KEY=PASTEYOURGENERATEDSECRETHERE
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
