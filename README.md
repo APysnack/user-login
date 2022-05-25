@@ -1,6 +1,6 @@
 Setup (still a work in progress):
 
-git clone https://github.com/APysnack/live-rap-center.git
+git clone git@github.com:APysnack/live-rap-center.git
 
 cd live-rap-center
 
