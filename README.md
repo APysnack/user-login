@@ -15,3 +15,15 @@ copy the generated secret. In your .env file add
 DEVISE_JWT_SECRET_KEY=PASTEYOURGENERATEDSECRETHERE
 
 bundle exec rake db:migrate
+
+cd client
+
+create another .env file
+
+in this .env file enter
+
+PORT=8000
+
+yarn install
+
+yarn start
