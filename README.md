@@ -14,3 +14,4 @@ copy the generated secret. In your .env file add
 
 DEVISE_JWT_SECRET_KEY=PASTEYOURGENERATEDSECRETHERE
 
+bundle exec rake db:migrate
