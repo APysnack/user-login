@@ -1,7 +1,9 @@
 Setup (still a work in progress):
 
 git clone https://github.com/APysnack/live-rap-center.git
+
 cd live-rap-center
+
 bundle install
 
 create a .env file in the root directory
