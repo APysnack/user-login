@@ -1,26 +1,28 @@
-Setup (still a work in progress):
+Setup (extra dependencies made need to be installed):
 
-git clone git@github.com:APysnack/live-rap-center.git
 
-cd live-rap-center
+`git clone git@github.com:APysnack/live-rap-center.git`
 
-bundle install
+`cd user-login`
 
-create a .env file in the root directory
+`bundle install`
 
-rake secret
+run the command `rake secret` and copy the generated secret
 
-copy the generated secret. In your .env file add
+create a .env file in the user-login's `root` directory. In your .env file add
 
 DEVISE_JWT_SECRET_KEY=PASTEYOURGENERATEDSECRETHERE
 
-bundle exec rake db:migrate
+`bundle exec rake db:migrate`
 
-cd client
+You should be able to run `rails s` and see a blank page at `localhost:3000` with the word "main" on it
 
-echo PORT=8000 > .env
+`cd client`
 
-yarn install
+`echo PORT=8000 > .env`
 
-yarn start
-# user-login
+`yarn install`
+
+`yarn start`
+
+This should start up the client on `localhost:8000`
