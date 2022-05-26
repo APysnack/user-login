@@ -26,7 +26,8 @@ Paste the secret as the value for `jwt_secret_key:` as shown (note that this is 
 
 ---------------------------
 5. Be sure to create a `.env` file in the project's `root` directory to save the master key that is shown after you save and completed the last step
-Add `RAILS_MASTER_KEY=PASTEMASTERKEYHERE`
+
+In the .env file Add `RAILS_MASTER_KEY=PASTEMASTERKEYHERE`
 
 ---------------------------
 6. Install rails gems
