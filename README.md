@@ -1,16 +1,16 @@
 Setup (extra dependencies made need to be installed):
 
 1. Clone the git repository
-$ `git clone git@github.com:APysnack/user-login.git`
+\$ `git clone git@github.com:APysnack/user-login.git`
 
 2. Change directory into the user login folder
-$ `cd user-login`
+\$ `cd user-login`
 
 3. Generate a secret hash (be sure to copy the output)
-$ `rake secret`
+\$ `rake secret`
 
 4. Open rails credentials in a text editor (I use vim in this example, use whatever editor you're comfortable with)
-$`EDITOR=vim rails credentials:edit`
+\$`EDITOR=vim rails credentials:edit`
 
 Paste the secret as the value for `jwt_secret_key:` as shown (note that this is indented by exactly 2 spaces)
 ![Screen Shot 2022-05-26 at 8 00 58 AM](https://user-images.githubusercontent.com/60242065/170485214-06045ad6-0ec4-4ab7-aa7d-24ab0174d120.png)
