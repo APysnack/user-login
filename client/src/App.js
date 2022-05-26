@@ -1,14 +1,20 @@
 import React from "react";
-import Users from "./components/Users";
-import Login from "./components/LoginForm/LoginForm";
 import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "./theme";
+import { lightTheme } from "./theme";
+import { Routes, Route } from "react-router-dom";
+import LoginForm from "./components/LoginForm/LoginForm";
 import Homepage from "./components/Homepage/Homepage";
+import PasswordReset from "./components/PasswordReset/PasswordReset";
 
 function App() {
+
   return (
     <ThemeProvider theme={lightTheme}>
-      <Homepage />
+      <Routes>
+          <Route exact path="/" element={<Homepage/>}/>
+          <Route exact path="/login" element={<LoginForm/>}/>
+          <Route exact path="/password-reset" element={<PasswordReset/>}/>
+        </Routes>
     </ThemeProvider>
   );
 }
