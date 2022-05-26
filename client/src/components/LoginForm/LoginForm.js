@@ -19,6 +19,7 @@ function LoginForm() {
         password: inputValues.password,
       },
     };
+    console.log(payload)
     dispatch(loginUser(payload));
   };
 

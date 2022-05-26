@@ -8,11 +8,7 @@ function Homepage() {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user.userState);
   const [isLoading, setIsLoading] = useState(true);
-
-  const callLoginWithToken = () => {
-    dispatch(loginWithToken(tokenPayload));
-  };
-
+  
   const callLogoutUser = () => {
     dispatch(logoutUser(tokenPayload));
   };
@@ -32,6 +28,10 @@ function Homepage() {
   }, []);
 
   useEffect(() => {
+    const callLoginWithToken = () => {
+      dispatch(loginWithToken(tokenPayload));
+    };    
+    
     if (tokenPayload && Object.keys(tokenPayload).length > 0) {
       callLoginWithToken();
     }
