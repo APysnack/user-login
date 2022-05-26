@@ -1,7 +1,7 @@
 Setup (extra dependencies made need to be installed):
 
 
-$`git clone git@github.com:APysnack/live-rap-center.git`
+$`git clone git@github.com:APysnack/user-login.git`
 
 $`cd user-login`
 
