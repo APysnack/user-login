@@ -1,3 +1,5 @@
+As of 5/26 some changes may be needed for the installation. In particular, the JWT denylist is no longer necessary in favor of using the user model to verify the freshness of the token
+
 Setup (extra dependencies made need to be installed):
 
 ---------------------------
