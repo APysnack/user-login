@@ -11,10 +11,14 @@ $ `git clone git@github.com:APysnack/user-login.git`
 $ `cd user-login`
 
 ---------------------------
+3. Generate a secret hash
 
-4. Generate rails credentials in a text editor (I use vim in this example, use whatever editor you're comfortable with)
+$`rake secret`
 
-run $`rake secret` to generate a secret hash and copy the output. Then 
+copy the output
+
+---------------------------
+4.Generate rails credentials and add your secret in a text editor (I use vim in this example, use whatever editor you're comfortable with)
 
 $`EDITOR=vim rails credentials:edit`
 
@@ -44,16 +48,16 @@ $`bundle exec rake db:migrate`
 9. Open a new terminal, cd to the `user-login/client` folder
 
 ---------------------------
-11. Install yarn dependencies
+10. Install yarn dependencies
 
 $`yarn install`
 
 ---------------------------
-12. Start the client
+11. Start the client
 
 $`yarn start`
 
-This should start up the client on `localhost:8000`
+This should start up the client on `localhost:3000`
 
 
 ** As of now, there is still some unhandled behavior, such as trying to log in with a user that does not exist. You should be able to register a user, then it will automatically log you in as that user. You should also be able to log out and log back in with no issues and you should remain logged in as a user unless you've logged yourself out. **
