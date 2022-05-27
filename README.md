@@ -14,7 +14,11 @@ $ `cd user-login`
 
 4. Generate rails credentials in a text editor (I use vim in this example, use whatever editor you're comfortable with)
 
+run $`rake secret` to generate a secret hash and copy the output. Then 
+
 $`EDITOR=vim rails credentials:edit`
+
+paste the secret as shown below. Note there are exactly 2 spaces of indentation:
 
 ![Screen Shot 2022-05-26 at 8 00 58 AM](https://user-images.githubusercontent.com/60242065/170687927-87f2d102-315d-4dfa-afe2-f1cad53e7261.png)
 
@@ -34,15 +38,10 @@ $`bundle install`
 $`bundle exec rake db:migrate`
 
 ---------------------------
-8. You should now be able to run $`rails s` and see a blank page at `localhost:3000` with the word "main" on it. Keep the server terminal open. 
+8. You should now be able to run $`rails s` and see a blank page at `localhost:3001` with the word "main" on it. Keep the server terminal open. 
 
 ---------------------------
 9. Open a new terminal, cd to the `user-login/client` folder
-
----------------------------
-10. Add Port=8000 in the client's environment. 
-
-$`echo PORT=8000 > .env`
 
 ---------------------------
 11. Install yarn dependencies
