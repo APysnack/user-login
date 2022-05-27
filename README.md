@@ -18,7 +18,7 @@ run $`rake secret` to generate a secret hash and copy the output. Then
 
 $`EDITOR=vim rails credentials:edit`
 
-paste the secret as shown below. Note there are exactly 2 spaces of indentation before `jwt_secret_key`:
+paste the secret as shown below. Do not modify the `secret_key_base`. Note there are exactly 2 spaces of indentation before `jwt_secret_key`:
 
 ![Screen Shot 2022-05-26 at 8 00 58 AM](https://user-images.githubusercontent.com/60242065/170687927-87f2d102-315d-4dfa-afe2-f1cad53e7261.png)
 
