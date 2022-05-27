@@ -5,16 +5,17 @@ import { Routes, Route } from "react-router-dom";
 import LoginForm from "./components/LoginForm/LoginForm";
 import Homepage from "./components/Homepage/Homepage";
 import PasswordReset from "./components/PasswordReset/PasswordReset";
+import PasswordEdit from "./components/PasswordEdit/PasswordEdit";
 
 function App() {
-
   return (
     <ThemeProvider theme={lightTheme}>
       <Routes>
-          <Route exact path="/" element={<Homepage/>}/>
-          <Route exact path="/login" element={<LoginForm/>}/>
-          <Route exact path="/password-reset" element={<PasswordReset/>}/>
-        </Routes>
+        <Route exact path="/" element={<Homepage />} />
+        <Route exact path="/login" element={<LoginForm />} />
+        <Route exact path="/password-reset" element={<PasswordReset />} />
+        <Route exact path="/password-edit" element={<PasswordEdit />} />
+      </Routes>
     </ThemeProvider>
   );
 }

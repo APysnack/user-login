@@ -1,29 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Formik, Form, Field } from "formik";
-import { loginUser, registerUser } from "../../redux/userState";
-import { useNavigate, Link } from "react-router-dom";
-import {
-    LoginContainer,
-    FieldContainer,
-    FormWrapper,
-} from "../LoginForm/LoginForm.styles";
-import api from "../../api/api"
+import { FieldContainer, FormWrapper } from "../LoginForm/LoginForm.styles";
+import api from "../../api/api";
 
 function PasswordReset() {
-
-    const callPasswordReset = (inputValues) => {
-        let payload = {
-          user: {
-            email: inputValues.email,
-          },
-        };
-        api.passwordReset(payload);
+  const callPasswordReset = (inputValues) => {
+    let payload = {
+      user: {
+        email: inputValues.email,
+      },
     };
+    api.passwordReset(payload);
+  };
 
   return (
-      <>
-        <h1>Password Reset</h1>
-        <Formik
+    <>
+      <h1>Password Reset</h1>
+      <Formik
         initialValues={{
           email: "",
         }}
@@ -36,7 +29,7 @@ function PasswordReset() {
         onSubmit={(values, { setSubmitting, resetForm }) => {
           setTimeout(() => {
             setSubmitting(false);
-              callPasswordReset(values);
+            callPasswordReset(values);
             resetForm();
           }, 500);
         }}
@@ -58,14 +51,14 @@ function PasswordReset() {
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="submit"
               >
-                  Submit
+                Submit
               </button>
             </FieldContainer>
           </FormWrapper>
         </Form>
       </Formik>
-      </>
-  )
+    </>
+  );
 }
 
-export default PasswordReset
+export default PasswordReset;
