@@ -1,5 +1,3 @@
-As of 5/26 some changes may be needed for the installation. In particular, the JWT denylist is no longer necessary in favor of using the user model to verify the freshness of the token
-
 Setup (extra dependencies made need to be installed):
 
 ---------------------------
@@ -18,7 +16,7 @@ $ `cd user-login`
 
 $`EDITOR=vim rails credentials:edit`
 
-after this command, save the file. Nothing else needs to be modified.
+![Screen Shot 2022-05-26 at 8 00 58 AM](https://user-images.githubusercontent.com/60242065/170687927-87f2d102-315d-4dfa-afe2-f1cad53e7261.png)
 
 ---------------------------
 5. Be sure to create a `.env` file in the project's `root` directory to save the master key that is shown after you save and completed the last step
