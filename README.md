@@ -58,6 +58,3 @@ $`yarn install`
 $`yarn start`
 
 This should start up the client on `localhost:3000`
-
-
-** As of now, there is still some unhandled behavior, such as trying to log in with a user that does not exist. You should be able to register a user, then it will automatically log you in as that user. You should also be able to log out and log back in with no issues and you should remain logged in as a user unless you've logged yourself out. **
