@@ -13,18 +13,12 @@ $ `git clone git@github.com:APysnack/user-login.git`
 $ `cd user-login`
 
 ---------------------------
-3. Generate a secret hash (be sure to copy the output)
 
-$ `rake secret`
-
----------------------------
-
-4. Open rails credentials in a text editor (I use vim in this example, use whatever editor you're comfortable with)
+4. Generate rails credentials in a text editor (I use vim in this example, use whatever editor you're comfortable with)
 
 $`EDITOR=vim rails credentials:edit`
 
-Paste the secret as the value for `jwt_secret_key:` as shown (note that this is indented by exactly 2 spaces)
-![Screen Shot 2022-05-26 at 8 00 58 AM](https://user-images.githubusercontent.com/60242065/170485214-06045ad6-0ec4-4ab7-aa7d-24ab0174d120.png)
+after this command, save the file. Nothing else needs to be modified.
 
 ---------------------------
 5. Be sure to create a `.env` file in the project's `root` directory to save the master key that is shown after you save and completed the last step
