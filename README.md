@@ -1,3 +1,14 @@
+The purpose of this repo is to create a starting point for future applications with necessary infrastructure such as library installations, user authentication, login/session management
+
+ruby on rails
+devise user authentication
+graphql/graphiql/apollo graphql
+tailwind css
+styled components
+material ui
+redux 
+redux-persist
+
 Setup (extra dependencies made need to be installed):
 
 ---------------------------
