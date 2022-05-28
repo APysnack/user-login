@@ -1,7 +1,8 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { lightTheme } from "./theme";
+import { philadelphia } from "./theme";
 import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
 import Homepage from "./components/Homepage/Homepage";
 import LoginPage from "./components/LoginPage/LoginPage";
 import PasswordReset from "./components/PasswordReset/PasswordReset";
@@ -10,7 +11,8 @@ import CreateLeagueForm from "./components/CreateLeagueForm/CreateLeagueForm";
 
 function App() {
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={philadelphia}>
+      <Navbar />
       <Routes>
         <Route exact path="/" element={<Homepage />} />
         <Route exact path="/login" element={<LoginPage />} />
