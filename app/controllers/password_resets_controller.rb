@@ -17,15 +17,13 @@ class PasswordResetsController < ApplicationController
     # TODO: complete process for editing user
     def edit
         @user = User.find_signed!(params[:token], purpose: "password_reset")
-        binding.pry
-        puts @user.id
         if @user.present?
             @user.password = params[:password]
             @user.save
-            redirect_to "http://localhost:3000/login"
+            redirect_to "http://localhost:3000"
         end
     rescue ActiveSupport::MessageVerifier::InvalidSignature
-        redirect_to "http://localhost:3000/login"
+        redirect_to "http://localhost:3000"
     end
 
     def update

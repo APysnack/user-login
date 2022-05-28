@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import api from "../../api/api";
 import { Formik, Form, Field } from "formik";
-import { FieldContainer, FormWrapper } from "../LoginForm/LoginForm.styles";
+import {
+  FieldContainer,
+  FormWrapper,
+} from "../SharedComponents/BaseForm.styles";
 
 function PasswordEdit() {
   let [searchParams, setSearchParams] = useSearchParams();
