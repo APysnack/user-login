@@ -1,6 +1,6 @@
 The purpose of this repo is to create a starting point for future applications with necessary infrastructure such as library installations, user authentication, login/session management
 
-ruby on rails<br/>  
+ruby on rails<br/>
 devise user authentication<br/>
 graphql/graphiql/apollo graphql<br/>
 tailwind css<br/>
