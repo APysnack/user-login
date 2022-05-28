@@ -9,8 +9,7 @@ material ui<br/>
 formik<br/>
 redux<br/>
 redux-persist<br/>
-
-and more
+and more<br/>
 
 (extra dependencies made need to be installed):
 
