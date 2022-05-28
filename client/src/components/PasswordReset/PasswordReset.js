@@ -1,6 +1,9 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
-import { FieldContainer, FormWrapper } from "../LoginForm/LoginForm.styles";
+import {
+  FieldContainer,
+  FormWrapper,
+} from "../SharedComponents/BaseForm.styles";
 import api from "../../api/api";
 
 function PasswordReset() {

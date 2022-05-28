@@ -1,13 +1,15 @@
 import axios from "axios";
 
+const API_URL = "http://localhost:3001";
+
 class API {
   passwordReset = (payload) => {
     axios
-      .post("http://localhost:3001/password/reset", payload)
+      .post(`${API_URL}/password/reset`, payload)
       .then((res) => console.log(res));
   };
   updatePassword = (payload) => {
-    axios.get("http://localhost:3001/password/reset/edit", {
+    axios.get(`${API_URL}/password/reset/edit`, {
       params: { token: payload.token, password: payload.new_password },
     });
   };

@@ -14,40 +14,39 @@ function assembleResponse(res) {
 function assembleError(err) {
   var assembledError = {
     code: err.code,
-    errorMessages: err.response.data.status
+    errorMessages: err.response.data.status,
   };
 
   return JSON.stringify(assembledError);
 }
 
+const API_URL = "http://localhost:3001";
+
 // FUNCTIONS TO BE EXECUTED
 export const registerUser = createAsyncThunk("user/registerUser", (payload) => {
   return axios
-    .post("http://localhost:3001/signup", payload)
+    .post(`${API_URL}/signup`, payload)
     .then((res) => assembleResponse(res))
     .catch((error) => assembleError(error));
 });
 
 export const loginUser = createAsyncThunk("user/loginUser", (payload) => {
   return axios
-    .post("http://localhost:3001/login", payload)
+    .post(`${API_URL}/login`, payload)
     .then((res) => assembleResponse(res))
     .catch((error) => error);
 });
 
-export const loginWithToken = createAsyncThunk(
-  "user/currentUser",
-  (config) => {
-    return axios
-      .get("http://localhost:3001/current_user", config)
-      .then((res) => res.data)
-      .catch((error) => error);
-  }
-);
+export const loginWithToken = createAsyncThunk("user/currentUser", (config) => {
+  return axios
+    .get(`${API_URL}/current_user`, config)
+    .then((res) => res.data)
+    .catch((error) => error);
+});
 
 export const logoutUser = createAsyncThunk("user/logoutUser", (config) => {
   return axios
-    .delete("http://localhost:3001/logout", config)
+    .delete(`${API_URL}/logout`, config)
     .then((res) => assembleResponse(res))
     .catch((error) => error.message);
 });
@@ -74,15 +73,13 @@ const userSlice = createSlice({
     },
     [loginUser.fulfilled.type]: (state, action) => {
       let res = JSON.parse(action.payload);
-      if(res.token){
+      if (res.token) {
         localStorage.setItem("auth_token", res.token);
         state.userState = {
           isLoading: false,
           user: res.user.data,
         };
-        
-      }
-      else {
+      } else {
         state.userState = {
           isLoading: false,
           error: ["we were unable to log you in with this information"],
@@ -103,15 +100,14 @@ const userSlice = createSlice({
     },
     [registerUser.fulfilled.type]: (state, action) => {
       let res = JSON.parse(action.payload);
-      let errMessage = []
-      if(res?.errorMessages?.message){
+      let errMessage = [];
+      if (res?.errorMessages?.message) {
         errMessage.push(res?.errorMessages?.message);
         state.userState = {
           isLoading: false,
           error: [...errMessage],
         };
-      }
-      else {
+      } else {
         localStorage.setItem("auth_token", res.token);
         state.userState = {
           isLoading: false,
@@ -121,7 +117,7 @@ const userSlice = createSlice({
       }
     },
     [registerUser.rejected.type]: (state, action) => {
-      console.log(`failed ${action}`)
+      console.log(`failed ${action}`);
       state.userState = {
         isLoading: false,
         user: {},
