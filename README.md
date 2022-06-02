@@ -50,8 +50,9 @@ In the .env file Add `RAILS_MASTER_KEY=PASTEMASTERKEYHERE`
 $`bundle install`
 
 ---------------------------
-7. Run the rails migrations
-
+7. Create the db and run the rails migrations
+8. 
+$`bundle exec rake db:create`
 $`bundle exec rake db:migrate`
 
 ---------------------------
